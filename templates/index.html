@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>DB 測試</title>
 </head>
 <body>
-    <div style="text-align: center;">
-        <h1>First Website! Hooray! 6/4</h1>
-        <img src="/static/index_meme.jpg">
-    </div>
+
+<h2>新增資料</h2>
+<form method="POST">
+    <input type="text" name="name" placeholder="輸入名字" required>
+    <button type="submit">送出</button>
+</form>
+
+<h2>資料庫內容</h2>
+<ul>
+    {% for row in rows %}
+        <li>{{ row[0] }} - {{ row[1] }}</li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
